@@ -6,12 +6,13 @@
     <link rel="stylesheet" href="home.css"> 
 </head> 
 <body>   
-    
     <div class="toolbar"> 
         <div class="record"> 
-            <div class="start_rec"><button>Начать запись</button></div> 
-            <div class="stop_rec"><button>Завершить запись</button></div> 
-            <div class="start_drive"><button>Пуск робота</button></div> 
+            <form method="get">
+                <div class="start_rec" name="rec" value="start_rec"><button>Начать запись</button></div> 
+                <div class="stop_rec" name="rec" value="stop_rec"><button>Завершить запись</button></div> 
+                <div class="start_drive" name="rec" value="start_drive"><button>Пуск робота</button></div> 
+            </form>        
         </div> 
         <div class="current_page"><h1>Управление роботом</h1></div>  
         <div class="sign_up"> 
@@ -24,40 +25,45 @@
         </div> 
         <div class="control"> 
             <div class="joystick"> 
-                <div class="fwd"><button>🠕Вперед🠕</button></div> 
-                <div class="lft"><button>🠔Лево🠔</button></div> 
-                <div class="ght"><button>🠖Право🠖</button></div> 
-                <div class="bwd"><button>🠗Назад🠗</button></div>     
+                <form method="get">
+                    <div class="fwd" name="move" value="forward"><button>🠕Вперед🠕</button></div> 
+                    <div class="lft" name="move" value="left"><button>🠔Лево🠔</button></div> 
+                    <div class="ght" name="move" value="right"><button>🠖Право🠖</button></div> 
+                    <div class="bwd" name="move" value="backward"><button>🠗Назад🠗</button></div>     
+                </form>
             </div> 
             <div class="stop&mqtt">
                 <div class="stop"> 
-                    <div><button>Плавная остановка</button></div> 
-                    <div><button>Жесткая остановка</button></div> 
+                    <form method="get">
+                        <div><button name="stop" value="smooth">Плавная остановка</button></div> 
+                        <div><button name="stop" value="hard">Жесткая остановка</button></div> 
+                    </form>
                 </div> 
                 <div class="emergency_mqtt"> 
                     <form method="get">
-                        <div class="topic"><input type="text"></div>
-                        <div class="msg"><input type="text"></div>
-                        <div class="btn_send" type="submit"><button>Отправить</button></div>
+                        <div class="topic" placeholder="Топик"><input type="text" name="EM_topic"></div>
+                        <div class="msg" placeholder="Сообщение"><input type="text" name="EM_msg"></div>
+                        <div class="btn_send" type="submit"><button type="submit">Отправить</button></div>
                     </form>
                 </div>
             </div> 
+            
             <div class="log_commands">
-                <form>
-                    <input type="text">
-                    <button>Отправить</button>
+                <form method="get">
+                    <div><input type="text" name="LCom_topic"></div>
+                    <div><button type="submit">Отправить</button></div>
+                    <div><button type="reset">Очистить</button></div>
                 </form>
-                <div class="log">
-
-                </div>
+                <div class="log">   </div>
             </div>
+
             <div class="log_coordinates">
-                <form>
-                    <input type="text">
-                    <button>Отправить</button>
+                <form method="get">
+                    <div><input type="text" name="LCoor_topic"></div>
+                    <div><button type="submit">Отправить</button></div>
+                    <div><button type="reset">Очистить</button></div>
                 </form>
-                <div class="log">
-                </div>
+                <div class="log">   </div>
             </div>
         </div> 
     </div> 
