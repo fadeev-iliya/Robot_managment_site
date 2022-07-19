@@ -23,22 +23,31 @@
  
         </div> 
         <div class="control"> 
-            <div class="move"> 
+            <div class="joystick"> 
                 <div class="fwd"><button>🠕Вперед🠕</button></div> 
                 <div class="lft"><button>🠔Лево🠔</button></div> 
                 <div class="ght"><button>🠖Право🠖</button></div> 
                 <div class="bwd"><button>🠗Назад🠗</button></div>     
             </div> 
-            <div class="stop"> 
-                <div><button></button></div> 
-                <div><button></button></div> 
+            <div class="stop&mqtt">
+                <div class="stop"> 
+                    <div><button>Плавная остановка</button></div> 
+                    <div><button>Жесткая остановка</button></div> 
+                </div> 
+                <div class="emergency_mqtt"> 
+                    <form method="get">
+                        <div class="topic"><input type="text"></div>
+                        <div class="msg"><input type="text"></div>
+                        <div class="btn_send" type="submit"><button>Отправить</button></div>
+                    </form>
+                </div>
             </div> 
-            <div> 
- 
-            </div> 
-            <div> 
- 
-            </div> 
+            <div class="log_commands">
+               
+            </div>
+            <div class="log_coordinates">
+                
+            </div>
         </div> 
     </div> 
 </body> 
