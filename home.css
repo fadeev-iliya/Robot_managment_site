@@ -1,6 +1,6 @@
-body{
+ body{
     font-family:Arial, sans-serif
-}
+} 
 
 .toolbar .current_page {
     text-align: center;
@@ -9,6 +9,8 @@ body{
 .toolbar .record{
    text-align: center;
    align-items: center;
+   display: grid;
+   grid-template-columns: 33% 34% 33%;     
 }
 .toolbar .sign_up{
     text-align: center;
@@ -21,14 +23,14 @@ body{
     display: grid;
     grid-template-columns: 33% 34% 33%;
 }
-.toolbar .record{
-    display: grid;
-    grid-template-columns: 33% 34% 33%;
-}
+
 .container{
     grid-template-columns: 50% 50%;
 }
 .container .control{
     grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 50%;
+} 
+.container .control .stop_and_mqtt{
     grid-template-rows: 50% 50%;
 }
