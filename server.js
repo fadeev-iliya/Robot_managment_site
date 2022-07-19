@@ -5,9 +5,20 @@ mqtt = require('mqtt')
 
 client = mqtt.connect('http://mqtt.pi40.ru',{username:'fadeev_iliya',password:'Ajhtcnufvg95',port:1883,clientId:'338764'})
 const topic = "fadeev_iliya/command";
-function on_connect() {     console.log('connected')      }
-client.on("connect",on_connect)
+const topic_Em = "fadeev_iliya/command";
+const topic_ = "fadeev_iliya/command";
 
+// MQTT ---------------------------------------
+function on_connect() {     console.log('connected')      }
+
+function receive_message(topic,payload){
+    console.log('received message',topic,payload.toString())
+}
+function on_subscribe(){
+    console.log('subscribed')
+}
+
+// Server --------------------------------------
 function on_request(request,result){
     console.log('Запрос ' + request.method +" "+ request.url)
 
@@ -32,6 +43,7 @@ function on_request(request,result){
                 else if (urlRequest.query.stop == 'smooth'  )       {    client.publish(topic,"f")    }
                 else if (urlRequest.query.stop == 'hard'    )       {    client.publish(topic,"h")    }
                 // Подключение по топикам
+                
             }
         }
     }
@@ -42,6 +54,10 @@ function on_request(request,result){
 function on_create(){
     console.log('Сервер запущен');
 }
+
+
+client.on("connect",on_connect)
+client.on("message",receive_message)
 
 server = http.createServer(on_request);
 
