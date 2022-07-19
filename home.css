@@ -1,0 +1,34 @@
+body{
+    font-family:Arial, sans-serif
+}
+
+.toolbar .current_page {
+    text-align: center;
+}
+
+.toolbar .record{
+   text-align: center;
+   align-items: center;
+}
+.toolbar .sign_up{
+    text-align: center;
+    margin-top: 5vh;
+}
+.toolbar .record button{
+   
+}
+.toolbar{
+    display: grid;
+    grid-template-columns: 33% 34% 33%;
+}
+.toolbar .record{
+    display: grid;
+    grid-template-columns: 33% 34% 33%;
+}
+.container{
+    grid-template-columns: 50% 50%;
+}
+.container .control{
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 50%;
+}
