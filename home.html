@@ -8,11 +8,21 @@
 <body>   
     <div class="toolbar"> 
         <div class="record"> 
-            <form method="get">
-                <div class="start_rec" name="rec" value="start_rec"><button>Начать запись</button></div> 
-                <div class="stop_rec" name="rec" value="stop_rec"><button>Завершить запись</button></div> 
-                <div class="start_drive" name="rec" value="start_drive"><button>Пуск робота</button></div> 
-            </form>        
+            <div class="start_rec">
+                <form method="get">
+                    <button name="rec" value="start_rec">Начать запись</button>
+                </form>
+            </div> 
+            <div class="stop_rec">
+                <form method="get">
+                    <button name="rec" value="stop_rec">Завершить запись</button>
+                </form>
+            </div> 
+            <div class="start_drive">
+                <form method="get">
+                    <button name="rec" value="start_drive">Пуск робота</button>
+                </form>
+            </div>         
         </div> 
         <div class="current_page"><h1>Управление роботом</h1></div>  
         <div class="sign_up"> 
@@ -26,25 +36,48 @@
         <div class="control"> 
             <div class="joystick"> 
                 <form method="get">
-                    <div class="fwd" name="move" value="forward"><button>🠕Вперед🠕</button></div> 
-                    <div class="lft" name="move" value="left"><button>🠔Лево🠔</button></div> 
-                    <div class="ght" name="move" value="right"><button>🠖Право🠖</button></div> 
-                    <div class="bwd" name="move" value="backward"><button>🠗Назад🠗</button></div>     
+                    <div class="fwd">
+                        <form method="get">
+                            <button name="move" value="forward">🠕Вперед🠕</button>
+                        </form>
+                    </div> 
+                    <div class="lft">
+                        <form method="get">
+                            <button name="move" value="left">🠔Лево🠔</button>
+                        </form>
+                    </div> 
+                    <div class="ght">
+                        <form method="get">
+                            <button name="move" value="right">🠖Право🠖</button>
+                        </form>
+                    </div> 
+                    <div class="bwd">
+                        <form method="get">
+                            <button name="move" value="backward">🠗Назад🠗</button>
+                        </form>
+                    </div>     
                 </form>
             </div> 
-            <div class="stop&mqtt">
+            <div class="stop_and_mqtt">
                 <div class="stop"> 
-                    <form method="get">
-                        <div><button name="stop" value="smooth">Плавная остановка</button></div> 
-                        <div><button name="stop" value="hard">Жесткая остановка</button></div> 
-                    </form>
+                    <div class="smooth">
+                        <form method="get">
+                            <button name="stop" value="smooth">Плавная остановка</button>
+                        </form>
+                    </div> 
+                    <div class="hard">
+                        <form method="get">
+                            <button  name="stop" value="hard">Жесткая остановка</button>
+                        </form>
+                    </div> 
                 </div> 
                 <div class="emergency_mqtt"> 
-                    <form method="get">
-                        <div class="topic" placeholder="Топик"><input type="text" name="EM_topic"></div>
-                        <div class="msg" placeholder="Сообщение"><input type="text" name="EM_msg"></div>
-                        <div class="btn_send" type="submit"><button type="submit">Отправить</button></div>
-                    </form>
+                    <div class="topic" placeholder="Топик">
+                        <input type="text" name="EM_topic"></div>
+                    <div class="msg" placeholder="Сообщение">
+                        <input type="text" name="EM_msg"></div>
+                    <div class="btn_send" type="submit">
+                        <button type="submit">Отправить</button></div>
                 </div>
             </div> 
             
