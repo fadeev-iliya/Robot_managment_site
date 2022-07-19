@@ -1,69 +1,68 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <title>Дом</title>
-    <link rel="stylesheet" href="home.css">
-</head>
-<body>  
-    <div class="toolbar">
-        <div class="record">
-            <div><button>Начать запись</button></div>
-            <div><button>Закончить запись</button></div>
-            <div><button>Запустить робота</button></div>
-        </div>
-        <div class="curent_page">
-            <h1>Управление робота</h1>
-        </div>
-        <div class="sing_up">
-            <button>Войти</button>
-        </div>
-    </div>
-    <div class="container" >
-        <div class="trajectory">
-
-        </div>
-        <div class="control">
-            <div class="move">
-                <div><button>Вперед</button></div>
-                <div><button>Лево</button></div>
-                <div><button>Право</button></div>
-                <div><button>Назад</button></div>    
-            </div>
-            <div class="stop">
-                <div><button></button></div>
-                <div><button></button></div>
-            </div>
-            <div>
-
-            </div>
-            <div>
-
-            </div>
-        </div>
-    </div>
-
-    <div>
-        <form method="get">
-            <div class="table">
-                <!-- Движения робота -->
-                <button name="move" value="forward">Вперед</button>
-                <button name="move" value="backward">Назад</button>
-                <button name="move" value="right">Право</button>
-                <button name="move" value="left">Лево</button>
-                <!-- Остановки робота -->
-                <button name="stop" value="smooth">плавный стоп </button>
-                <button name="stop" value="hard">жесткий стоп </button>
-            </div>
-        </form>
-        
-        <!-- <form method="get">
-             Двидение моторов 
-            <button>вперед правый мотор<button> 
-            <button>назад правый мотор</button>
-            <button>вперед левый мотор</button>
-            <button>назад левый мотор</button>
-        </form> -->
-    </div>
-</body>
+<!DOCTYPE html> 
+<html lang="ru"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <title>Дом</title> 
+    <link rel="stylesheet" href="home.css"> 
+</head> 
+<body>   
+    
+    <div class="toolbar"> 
+        <div class="record"> 
+            <div class="start_rec"><button>Начать запись</button></div> 
+            <div class="stop_rec"><button>Завершить запись</button></div> 
+            <div class="start_drive"><button>Пуск робота</button></div> 
+        </div> 
+        <div class="current_page"><h1>Управление роботом</h1></div>  
+        <div class="sign_up"> 
+            <button>Войти | Регистрация</button> 
+        </div> 
+    </div> 
+    <div class="container" > 
+        <div class="trajectory"> 
+ 
+        </div> 
+        <div class="control"> 
+            <div class="move"> 
+                <div class="fwd"><button>🠕Вперед🠕</button></div> 
+                <div class="lft"><button>🠔Лево🠔</button></div> 
+                <div class="ght"><button>🠖Право🠖</button></div> 
+                <div class="bwd"><button>🠗Назад🠗</button></div>     
+            </div> 
+            <div class="stop"> 
+                <div><button></button></div> 
+                <div><button></button></div> 
+            </div> 
+            <div> 
+ 
+            </div> 
+            <div> 
+ 
+            </div> 
+        </div> 
+    </div> 
+ 
+    <div> 
+        <form method="get"> 
+            <div class="table"> 
+                <!-- Движения робота --> 
+                <button name="move" value="forward">Вперед</button> 
+                <button name="move" value="backward">Назад</button> 
+                <button name="move" value="right">Право</button> 
+                <button name="move" value="left">Лево</button> 
+                <!-- Остановки робота --> 
+                <button class="smooth_stop" name="stop" value="smooth">Плавная остановка </button> 
+                <button class="hard_stop" name="stop" value="hard">Жесткая остановка </button> 
+            </div> 
+        </form> 
+         
+        <!-- <form method="get"> 
+             Двидение моторов  
+            <button>вперед правый мотор<button>  
+            <button>назад правый мотор</button> 
+            <button>вперед левый мотор</button> 
+            <button>назад левый мотор</button> 
+        </form> --> 
+    </div> 
+</body> 
 </html>
