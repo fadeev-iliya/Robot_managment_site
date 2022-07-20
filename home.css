@@ -48,3 +48,62 @@ body{
     grid-template-columns: 100%;
     grid-template-rows: 50% 50%;
 }
+.container .control .joystick form{
+    display: grid;
+    height: 43.5vh;
+    align-items: center;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: 33% 33% 33%;
+}
+.container .control .joystick form .fwd{
+    
+    grid-column: 2 / 4;
+}
+.container .control .joystick form .lft{
+    grid-column: 1 / 3;
+}
+.container .control .joystick form .ght{
+    grid-column: 3 / 5;
+}
+.container .control .joystick form .bwd{
+    grid-column: 2 / 4;
+}
+.container .control .joystick form .fwd button{
+    background: url(/png/arrow_F.png);
+    background-size: cover;
+    border: none;
+    transform: scale(1.7);
+}
+.container .control .joystick form .bwd button{
+    background: url(/png/arrow_B.png);
+    background-size: cover;
+    border: none;
+    transform: scale(1.7);
+}
+.container .control .joystick form .lft button{
+    background: url(/png/arrow_L.png);
+    background-size: cover;
+    border: none;
+    transform: scale(1.7);
+}
+.container .control .joystick form .ght button{
+    background: url(/png/arrow_R.png);
+    background-size: cover;
+    border: none;
+    transform: scale(1.7);
+}
+.container .control .joystick form button{
+padding: 30px;
+}
+.container .control .stop_and_mqtt .emergency_mqtt form{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 50%;
+}
+.container .control .stop_and_mqtt .emergency_mqtt form .topic{
+    align-items: center;
+    grid-column: 1 / 3;
+}
+.container .control .stop_and_mqtt .emergency_mqtt form .topic input{
+    width: 17vw;
+}
