@@ -1,36 +1,50 @@
- body{
+/* Основа */
+body{
     font-family:Arial, sans-serif
+    
 } 
 
-.toolbar .current_page {
-    text-align: center;
-}
-
-.toolbar .record{
-   text-align: center;
-   align-items: center;
-   display: grid;
-   grid-template-columns: 33% 34% 33%;     
-}
-.toolbar .sign_up{
-    text-align: center;
-    margin-top: 5vh;
-}
-.toolbar .record button{
-   
-}
+/* Меню */
 .toolbar{
+    height: 10vh;
+    width: 98vw;
+    padding: 0%;
+    margin: 0%;
     display: grid;
     grid-template-columns: 33% 34% 33%;
 }
 
+.toolbar .record form{
+   display: grid;
+   text-align: center;
+   grid-template-columns: 33% 34% 33%;     
+}
+.toolbar .record form button {
+    margin-top: 4vh;
+}
+.toolbar .current_page {
+    text-align: center;
+}
+.toolbar .sign_up{
+    text-align: right;
+    margin-top: 4vh;
+    margin-right: 7vw;
+}
+
+/* Основной блок управления */
 .container{
+    height: 87vh;
+    width: 98vw;
+    display: grid;
     grid-template-columns: 50% 50%;
 }
 .container .control{
+    display: grid;
     grid-template-columns: 50% 50%;
     grid-template-rows: 50% 50%;
 } 
 .container .control .stop_and_mqtt{
+    display: grid;
+    grid-template-columns: 100%;
     grid-template-rows: 50% 50%;
 }
