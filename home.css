@@ -69,25 +69,25 @@ body{
     grid-column: 2 / 4;
 }
 .container .control .joystick form .fwd button{
-    background: url(/png/arrow_F.png);
+    background: url('/png/arrow_F.png');
     background-size: cover;
     border: none;
     transform: scale(1.7);
 }
 .container .control .joystick form .bwd button{
-    background: url(/png/arrow_B.png);
+    background: url('/png/arrow_B.png');
     background-size: cover;
     border: none;
     transform: scale(1.7);
 }
 .container .control .joystick form .lft button{
-    background: url(/png/arrow_L.png);
+    background: url('/png/arrow_L.png');
     background-size: cover;
     border: none;
     transform: scale(1.7);
 }
 .container .control .joystick form .ght button{
-    background: url(/png/arrow_R.png);
+    background: url('/png/arrow_R.png');
     background-size: cover;
     border: none;
     transform: scale(1.7);

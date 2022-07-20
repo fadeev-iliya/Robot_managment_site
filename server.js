@@ -21,31 +21,28 @@ function on_subscribe(){
 // Server --------------------------------------
 function on_request(request,result){
     console.log('Запрос ' + request.method +" "+ request.url)
-
-    if (request.url.indexOf("/home") != -1){
-        // Возвращение css
-        if (request.url.indexOf("/home.css") != -1){
-            result.setHeader("Content-type","text/css; charset=utf-8;")
-            fs.createReadStream('home.css').pipe(result)    
+    if (request.url.indexOf("/home.css") != -1){
+        result.setHeader("Content-type","text/css; charset=utf-8;")
+        fs.createReadStream('home.css').pipe(result)    
+    }
+    else if (request.url.indexOf("/home") != -1){
+        result.setHeader("Content-type","text/html; charset=utf-8;")
+        fs.createReadStream('home.html').pipe(result)
+        if (request.method == "GET"){
+            let urlRequest = url.parse(request.url,true)
+            // Движение 
+            if      (urlRequest.query.move == 'forward' )       {    client.publish(topic,"o")    }
+            else if (urlRequest.query.move == 'backward')       {    client.publish(topic,"p")    }
+            else if (urlRequest.query.move == 'right'   )       {    client.publish(topic,"r")    }
+            else if (urlRequest.query.move == 'left'    )       {    client.publish(topic,"q")    }
+            // Стопы
+            else if (urlRequest.query.stop == 'smooth'  )       {    client.publish(topic,"f")    }
+            else if (urlRequest.query.stop == 'hard'    )       {    client.publish(topic,"h")    }
         }
-        // анализ нажатия на кнопку
-        else{
-            result.setHeader("Content-type","text/html; charset=utf-8;")
-            fs.createReadStream('home.html').pipe(result)
-            if (request.method == "GET"){
-                let urlRequest = url.parse(request.url,true)
-                // Движение 
-                if      (urlRequest.query.move == 'forward' )       {    client.publish(topic,"o")    }
-                else if (urlRequest.query.move == 'backward')       {    client.publish(topic,"p")    }
-                else if (urlRequest.query.move == 'right'   )       {    client.publish(topic,"r")    }
-                else if (urlRequest.query.move == 'left'    )       {    client.publish(topic,"q")    }
-                // Стопы
-                else if (urlRequest.query.stop == 'smooth'  )       {    client.publish(topic,"f")    }
-                else if (urlRequest.query.stop == 'hard'    )       {    client.publish(topic,"h")    }
-                // Подключение по топикам
-                
-            }
-        }
+    }
+    else if (request.url.indexOf('.png') != -1){
+        result.setHeader("Content-type","image/png;")
+        fs.createReadStream(__dirname + request.url).pipe(result)    
     }
     else{
         result.write("ERROR 404 not Found")
